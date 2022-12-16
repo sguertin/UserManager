@@ -1,0 +1,114 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Create AD User";
+}
+<form id="form">
+    <div class="row">
+        <div class="form-group col">
+            <label for="firstName">First Name</label>
+            <input type="text" class="form-control" name="firstName" id="firstName" placeholder="John" required>
+        </div>
+        <div class="form-group col">
+            <label for="lastName">Last Name</label>
+            <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Smith" required>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col">
+            <label for="shortName">ShortName</label>
+            <input type="text" class="form-control" name="shortName" id="shortName" placeholder="JSmith" required>
+        </div>
+        <div class="form-group col">
+            <label for="description">Description</label>
+            <input type="text" class="form-control" name="description" id="description" placeholder="" required>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col">
+            <label for="displayName">Display Name</label>
+            <input type="text" class="form-control" name="displayName" id="displayName" required>
+        </div>
+        <div class="form-group col">
+            <label for="jobTitle">Job Title</label>
+            <input type="text" class="form-control" name="jobTitle" id="jobTitle" required>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col">
+            <label for="country">Country</label>
+            <select id="country" name="country" class="form-select">
+                <option selected>US</option>
+            </select>
+        </div>
+        <div class="form-group col">
+            <label for="location">Location</label>
+            <select id="location" name="location" class="form-select">
+                <option selected>Aliquippa</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col">
+            <label for="company">Company</label>
+            <select id="company" name="company" class="form-select">
+                <option selected>TRNA</option>
+            </select>
+        </div>
+        <div class="form-group col">
+            <label for="manager">Manager</label>
+            <input type="text" class="form-control" name="manager" id="manager" required>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                <label for="costCenter">Cost Center</label>
+                <input type="text" class="form-control" name="costCenter" id="costCenter" required>
+            </div>
+            <div class="form-group">
+                <label for="department">Department</label>
+                <select name="department" id="department" class="form-select">
+                    <option selected>Administration</option>
+                </select>
+            </div>
+        </div>
+        <div class="col form-group">
+            <div class="row">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="vpn" id="vpn">
+                    <label class="form-check-label" for="vpn">
+                        Enable VPN?
+                    </label>                    
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-check">                    
+                    <input class="form-check-input" type="checkbox" name="outlookMailbox" id="outlookMailbox">
+                    <label class="form-check-label" for="outlookMailbox">
+                        Enable Outlook Mailbox?
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-check">                    
+                    <input class="form-check-input" type="checkbox" name="confidential" id="confidential">
+                    <label class="form-check-label" for="confidential">
+                        Confidential?
+                    </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col form-group"></div>
+                <div class="col form-group"></div>
+                <div class="col form-group"></div>
+                <div class="col form-group"></div>
+                <div class="col form-group">
+                    <button type="submit" class="btn btn-primary" id="createBtn">Create</button>  
+                </div>
+                
+            </div>
+        </div>
+              
+    </div>    
+</form>
