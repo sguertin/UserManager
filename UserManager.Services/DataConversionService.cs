@@ -5,13 +5,16 @@ using System.Text;
 using System.Threading.Tasks;
 using UserManager.Models;
 
-namespace UserManager.Services
+namespace UserManager.Services;
+
+public class DataConversionService : IDataConversionService
 {
-    public class DataConversionService : IDataConversionService
+    public CreateUserModel ConvertRequestToUserModel(RequestModel request)
     {
-        public CreateUserModel ConvertRequestToUserModel(RequestModel request)
+        var newModel = new CreateUserModel
         {
-            return new CreateUserModel();
-        }
+            Name = request.DisplayName
+        };
+        return newModel;
     }
 }

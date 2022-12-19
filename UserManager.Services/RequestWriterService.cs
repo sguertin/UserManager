@@ -27,11 +27,13 @@ public class RequestWriterService : IRequestWriterService
         }
         var fileName = userRequest.Name?.Replace(" ", "_") ?? Guid.NewGuid().ToString();
         var filePath = Path.Combine(targetDirectory, $"{fileName}.json");
+        var action = "Writing";
         if (File.Exists(filePath))
         {
+            action = "Overwriting";
             _logger.LogWarning("{FilePath} already exists", filePath);
         }
-        _logger.LogInformation("Writing {FilePath}", filePath);
+        _logger.LogInformation("{Action} {FilePath}", action, filePath);
         File.WriteAllText(filePath, JsonSerializer.Serialize(userRequest));
         _logger.LogInformation("{FilePath} written successfully", filePath);
     }

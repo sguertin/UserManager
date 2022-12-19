@@ -5,10 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using UserManager.Models;
 
-namespace UserManager.Services
+namespace UserManager.Services;
+
+public interface IDataConversionService
 {
-    public interface IDataConversionService
-    {
-        CreateUserModel ConvertRequestToUserModel(RequestModel request);
-    }
+    CreateUserModel ConvertRequestToUserModel(RequestModel request);
 }

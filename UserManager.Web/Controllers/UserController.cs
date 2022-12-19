@@ -1,23 +1,20 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using UserManager.Models;
+using UserManager.Models.Extensions;
 using UserManager.Services;
 
-namespace UserManager.Api.Controllers
+namespace UserManager.Web.Controllers
 {
     [ApiController, Route("api/[controller]")]
     [Consumes("application/json")]
     public class UserController : ControllerBase
     {
         private readonly IRequestWriterService _requestWriterService;
-        private readonly IDataConversionService _dataConversionService;
         private readonly ILogger<RequestWriterService> _logger;
         public UserController(IRequestWriterService requestWriterService, 
-            IDataConversionService dataConversionService, 
             ILogger<RequestWriterService> logger)
         {
             _requestWriterService = requestWriterService;
-            _dataConversionService = dataConversionService;
             _logger = logger;
         }
         [HttpPost]
@@ -26,7 +23,7 @@ namespace UserManager.Api.Controllers
             try
             {
                 _logger.LogInformation("Received Request {Request}", request);
-                _requestWriterService.WriteRequest(_dataConversionService.ConvertRequestToUserModel(request));
+                _requestWriterService.WriteRequest(request.Map());
             }
             catch (Exception ex)
             {

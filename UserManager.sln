@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33122.133
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserManager.Web", "UserManager\UserManager.Web.csproj", "{03171F36-D88E-4055-ADB4-69B87FB9BA33}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserManager.Web", "UserManager.Web\UserManager.Web.csproj", "{03171F36-D88E-4055-ADB4-69B87FB9BA33}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserManager.Services", "UserManager.Services\UserManager.Services.csproj", "{48EE80E5-8B29-43A4-9839-0B3B7C17CF8C}"
 EndProject
