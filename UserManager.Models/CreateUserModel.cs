@@ -2,7 +2,7 @@
 
 namespace UserManager.Models
 {
-    public class CreateUserModel
+    public class CreateUserModel : BaseModel
     {
         [Required]
         public string? Name { get; set; }
