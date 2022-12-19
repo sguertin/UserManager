@@ -21,21 +21,18 @@ public class RequestWriterService : IRequestWriterService
         var targetDirectory = _configuration["TargetDirectory"] ?? throw new Exception("No Target Directory specified!");
         if (!Directory.Exists(targetDirectory))
         {
-            _logger.LogInformation("{targetDirectory} was not found, creating...", targetDirectory);
+            _logger.LogInformation("{TargetDirectory} was not found, creating...", targetDirectory);
             Directory.CreateDirectory(targetDirectory);
-            _logger.LogInformation("{targetDirectory} created", targetDirectory);
+            _logger.LogInformation("{TargetDirectory} created", targetDirectory);
         }
         var fileName = userRequest.Name?.Replace(" ", "_") ?? Guid.NewGuid().ToString();
-        var filePath = Path.Combine(targetDirectory, $"{fileName}.json") ;
+        var filePath = Path.Combine(targetDirectory, $"{fileName}.json");
         if (File.Exists(filePath))
         {
-            _logger.LogInformation("Overwriting {filePath}", filePath);
+            _logger.LogWarning("{FilePath} already exists", filePath);
         }
-        else
-        {
-            _logger.LogInformation("Creating {filePath}", filePath);
-        }        
+        _logger.LogInformation("Writing {FilePath}", filePath);
         File.WriteAllText(filePath, JsonSerializer.Serialize(userRequest));
-        _logger.LogInformation("{filePath} written successfully", filePath);
+        _logger.LogInformation("{FilePath} written successfully", filePath);
     }
 }
